@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/signup.html"));
 });
 
-router.get("/", (req, res) => {
+router.get("/login", (req, res) => {
   if (req.user) {
     res.redirect("/members.html");
   }

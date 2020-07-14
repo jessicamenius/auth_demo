@@ -24,7 +24,7 @@ router.get("/logout", (req, res) => {
   //   res.redirect("/");
 });
 
-router.get("api/user_data", (req, res) => {
+router.get("/api/user_data", (req, res) => {
   !req.user
     ? res.json({ msg: "No user found" })
     : res.json({ email: req.user.email, id: req.user.id });
