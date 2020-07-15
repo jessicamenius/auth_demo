@@ -12,7 +12,7 @@ app.use(express.static("./client"));
 
 app.use(
   session({
-    secret: "process.env.SECRET",
+    secret: process.env.SECRET,
     resave: true,
     saveUninitialized: true,
   })

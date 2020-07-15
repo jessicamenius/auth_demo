@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const passport = require("../config/passport.js");
+const passport = require("../config/passport");
 const db = require("../models");
 
 router.post("/api/login", passport.authenticate("local"), (req, res) => {
@@ -20,8 +20,8 @@ router.post("/api/signup", (req, res) => {
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.send("yes");
-  //   res.redirect("/");
+  // res.send("yes");
+  res.redirect("/");
 });
 
 router.get("/api/user_data", (req, res) => {

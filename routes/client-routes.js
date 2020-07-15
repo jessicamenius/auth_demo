@@ -1,18 +1,18 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const isAuthenticated = require("../config/middleware/isAuthenticated.js");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 router.get("/", (req, res) => {
   if (req.user) {
-    res.redirect("/members.html");
+    res.redirect("/members");
   }
   res.sendFile(path.join(__dirname, "../client/signup.html"));
 });
 
 router.get("/login", (req, res) => {
   if (req.user) {
-    res.redirect("/members.html");
+    res.redirect("/members");
   }
   res.sendFile(path.join(__dirname, "../client/login.html"));
 });
